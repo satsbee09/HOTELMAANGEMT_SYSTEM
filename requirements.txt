@@ -1,3 +1,13 @@
 Flask==3.0.0
 gunicorn==21.2.0
 Werkzeug==3.0.1
+```
+
+### **2️⃣ runtime.txt** ← YOU'RE HERE
+```
+python-3.11.0
+```
+
+### **3️⃣ Procfile** (no .txt extension!)
+```
+web: gunicorn app:app
