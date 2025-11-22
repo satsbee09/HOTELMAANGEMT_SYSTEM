@@ -338,13 +338,11 @@ def reports():
                          occupied_rooms=occupied,
                          available_rooms=total_rooms - occupied,
                          occupancy_rate=occupancy_rate)
-
 if __name__ == '__main__':
     init_db()
     print("🌐 Hotel Management System - Web Interface")
     print("📍 Open your browser and go to: http://127.0.0.1:5000")
     print("💻 Terminal version still works: python hotel_management.py")
-    if __name__ == '__main__':
-     init_db()
-     port = int(os.getenv('PORT', 5000))
-     app.run(host='0.0.0.0', port=port, debug=False)
+
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
