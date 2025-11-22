@@ -2,12 +2,17 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import sqlite3
 from datetime import datetime
 import json
+import os
 
 app = Flask(__name__)
 
+app.secret_key = os.getenv('SECRET_KEY', 'your-secret-key-change-this-in-production')
+
 # Database connection helper
 def get_db_connection():
-    conn = sqlite3.connect('hotel_management.db')
+    # Use /opt/render/project/src for Render's persistent storage
+    db_path = os.getenv('DATABASE_PATH', 'hotel_management.db')
+    conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -339,4 +344,7 @@ if __name__ == '__main__':
     print("🌐 Hotel Management System - Web Interface")
     print("📍 Open your browser and go to: http://127.0.0.1:5000")
     print("💻 Terminal version still works: python hotel_management.py")
-    app.run(debug=True)
+    if __name__ == '__main__':
+     init_db()
+     port = int(os.getenv('PORT', 5000))
+     app.run(host='0.0.0.0', port=port, debug=False)

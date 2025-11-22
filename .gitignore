@@ -1,0 +1,96 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Database (optional - include if you want sample data)
+hotel_management.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+```
+
+---
+
+## **1.5 Create `Procfile`** (Alternative method)
+
+Create `Procfile`:
+```
+web: gunicorn app:app
+```
+
+---
+
+## **1.6 Create `runtime.txt`**
+
+Create `runtime.txt` to specify Python version:
+```
+python-3.11.0
+```
+
+---
+
+# **STEP 2: Project Structure**
+
+Your final project structure should look like this:
+```
+hotel-management-system/
+│
+├── app.py                      # Main Flask application
+├── hotel_management.py         # Terminal version (optional)
+├── hotel_management.db         # Database (will be created on Render)
+│
+├── templates/                  # All HTML files
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── rooms.html
+│   ├── add_room.html
+│   ├── guests.html
+│   ├── add_guest.html
+│   ├── bookings.html
+│   ├── add_booking.html
+│   ├── checkout.html
+│   ├── staff.html
+│   ├── add_staff.html
+│   ├── reports.html
+│   └── users.html
+│
+├── requirements.txt            # Python dependencies
+├── render.yaml                 # Render configuration
+├── Procfile                    # Process file
+├── runtime.txt                 # Python version
+├── .gitignore                  # Git ignore file
+└── README.md                   # Project documentation (optional)
