@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff - Hotel Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f6fa; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; }
+        nav { background: #2c3e50; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+        nav a { color: white; text-decoration: none; padding: 15px 25px; transition: background 0.3s; }
+        nav a:hover { background: #34495e; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .btn { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; font-size: 1em; }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-primary:hover { background: #5568d3; transform: translateY(-2px); }
+        table { width: 100%; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        th, td { padding: 15px; text-align: left; }
+        th { background: #667eea; color: white; font-weight: 600; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e9ecef; }
+        h2 { color: #2c3e50; font-size: 2em; }
+    </style>
+</head>
+<body>
+    <header><h1>🏨 Hotel Management System</h1></header>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/rooms">Rooms</a>
+        <a href="/guests">Guests</a>
+        <a href="/bookings">Bookings</a>
+        <a href="/staff">Staff</a>
+        <a href="/reports">Reports</a>
+    </nav>
+    <div class="container">
+        <div class="header-actions">
+            <h2>👥 All Staff</h2>
+            <a href="/staff/add" class="btn btn-primary">➕ Add Staff Member</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Hire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in staff %}
+                <tr>
+                    <td>{{ member.staff_id }}</td>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.position }}</td>
+                    <td>{{ member.phone }}</td>
+                    <td>${{ "%.2f"|format(member.salary) }}</td>
+                    <td>{{ member.hire_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
