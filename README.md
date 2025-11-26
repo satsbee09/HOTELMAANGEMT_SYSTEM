@@ -107,7 +107,8 @@ gunicorn
 Tables included: Rooms, Guests, Bookings, Staff, Payments
 
 📸 Screenshots
-(Add dashboard and forms screenshots here)
+![login page](<Screenshot (14).png>)
+![dashboard page](<Screenshot (15).png>)  
 
 🤝 Contribution
 Pull requests & improvements are welcome!
