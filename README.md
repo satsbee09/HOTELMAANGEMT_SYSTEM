@@ -77,7 +77,7 @@ Password: admin123
 ⚙️ Installation & Setup
 
 1️⃣ Clone the repo:
-git clone https://github.com/satsbee09/HOTEL_MANAGEMENT_SYSTEM.git
+git clone https://github.com/satsbee09/HOTELMAANGEMT_SYSTEM
 
 cd HOTEL_MANAGEMENT_SYSTEM
 
