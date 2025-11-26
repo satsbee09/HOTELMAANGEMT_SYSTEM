@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Hotel Management</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,24 +13,19 @@
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 30px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
+
         nav {
             background: #2c3e50;
-            padding: 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 0;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
@@ -43,13 +34,25 @@
             text-decoration: none;
             padding: 15px 25px;
             display: inline-block;
-            transition: background 0.3s;
+            transition: 0.3s;
+            font-weight: 500;
         }
         
         nav a:hover {
             background: #34495e;
         }
+
+        .logout-btn {
+            background: #e74c3c;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
         
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -69,7 +72,7 @@
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: 0.3s;
             border-left: 5px solid #667eea;
         }
         
@@ -81,15 +84,21 @@
         .stat-card h3 {
             font-size: 3em;
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .stat-card p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #666;
             font-weight: 500;
         }
         
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+        }
+
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -104,29 +113,20 @@
             text-decoration: none;
             color: #333;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            transition: 0.3s;
+            font-weight: 600;
         }
         
         .action-btn:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .action-btn h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>🏨 Hotel Management System</h1>
         <p>Dashboard Overview</p>
@@ -139,56 +139,31 @@
         <a href="/bookings">Bookings</a>
         <a href="/staff">Staff</a>
         <a href="/reports">Reports</a>
+        
+        <!-- NEW: Logout Button -->
+        <a href="/logout" class="logout-btn">Logout ✖</a>
     </nav>
     
     <div class="container">
+        
         <h2>📊 Quick Statistics</h2>
         <div class="stats-grid">
-            <div class="stat-card">
-                <h3>{{ total_rooms }}</h3>
-                <p>Total Rooms</p>
-            </div>
-            <div class="stat-card">
-                <h3>{{ occupied_rooms }}</h3>
-                <p>Occupied Rooms</p>
-            </div>
-            <div class="stat-card">
-                <h3>{{ available_rooms }}</h3>
-                <p>Available Rooms</p>
-            </div>
-            <div class="stat-card">
-                <h3>{{ total_guests }}</h3>
-                <p>Total Guests</p>
-            </div>
-            <div class="stat-card">
-                <h3>{{ total_bookings }}</h3>
-                <p>Total Bookings</p>
-            </div>
-            <div class="stat-card">
-                <h3>${{ "%.2f"|format(total_revenue) }}</h3>
-                <p>Total Revenue</p>
-            </div>
+            <div class="stat-card"><h3>{{ total_rooms }}</h3><p>Total Rooms</p></div>
+            <div class="stat-card"><h3>{{ occupied_rooms }}</h3><p>Occupied Rooms</p></div>
+            <div class="stat-card"><h3>{{ available_rooms }}</h3><p>Available Rooms</p></div>
+            <div class="stat-card"><h3>{{ total_guests }}</h3><p>Total Guests</p></div>
+            <div class="stat-card"><h3>{{ total_bookings }}</h3><p>Total Bookings</p></div>
+            <div class="stat-card"><h3>₹{{ total_revenue }}</h3><p>Total Revenue</p></div>
         </div>
         
         <h2>⚡ Quick Actions</h2>
         <div class="quick-actions">
-            <a href="/rooms/add" class="action-btn">
-                <h3>➕</h3>
-                <p>Add Room</p>
-            </a>
-            <a href="/guests/add" class="action-btn">
-                <h3>👤</h3>
-                <p>Add Guest</p>
-            </a>
-            <a href="/bookings/add" class="action-btn">
-                <h3>📅</h3>
-                <p>New Booking</p>
-            </a>
-            <a href="/staff/add" class="action-btn">
-                <h3>👥</h3>
-                <p>Add Staff</p>
-            </a>
+            <a href="/rooms/add" class="action-btn">➕ Add Room</a>
+            <a href="/guests/add" class="action-btn">👤 Add Guest</a>
+            <a href="/bookings/add" class="action-btn">📅 New Booking</a>
+            <a href="/staff/add" class="action-btn">👥 Add Staff</a>
         </div>
     </div>
+
 </body>
 </html>
