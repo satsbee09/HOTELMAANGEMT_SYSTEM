@@ -1,140 +1,118 @@
 🏨 Hotel Management System – Flask Web Application
 
 A complete Hotel Management System built using Flask, SQLite, HTML/CSS, and Bootstrap.
-This project allows hotel staff to manage rooms, guests, bookings, payments, staff, and generate reports.
+This project allows hotel staff to manage rooms, guests, bookings, payments, staff, and reports.
 
 🚀 Live Demo
-
-https://hotelmaangemt-system-1.onrender.com
+https://hotelmanagement-system.onrender.com
 
 📌 Features
+
 🛏️ Rooms Management
-
-Add, view, and delete rooms
-
-Track room availability
-
-Auto-update room status during booking
+• Add, view and delete rooms
+• Track room availability
+• Auto-update room status
 
 👤 Guest Management
-
-Add guest details
-
-Search guests by name or phone
-
-Store address and ID proof
+• Add guest details
+• Search by name or phone
+• Store address + ID proof
 
 📅 Booking Management
-
-Create bookings
-
-Auto-calculate total amount based on stay duration
-
-Checkout functionality with payment entry
-
-Change room status (Available/Occupied)
+• New booking creation
+• Auto price calculation
+• Checkout + payment record
+• Update room occupancy
 
 💳 Payments
-
-Store payments
-
-View total revenue
-
-Track payment method and date
+• Store payment history
+• View total revenue
+• Track date and method
 
 🧑‍💼 Staff Management
-
-Add staff
-
-View staff details
-
-Manage salary, position, and hire date
+• Add / view staff
+• Manage salary & positions
 
 📊 Reports Dashboard
-
-Total revenue
-
-Total bookings
-
-Monthly revenue
-
-Occupancy rate
-
-Total guests and rooms overview
+• Monthly revenue chart
+• Rooms occupancy status
+• Total customers & bookings
 
 🛠️ Tech Stack
 
-Backend: Python, Flask, SQLite
-Frontend: HTML, CSS, Bootstrap, Jinja2
-Deployment: Render (Web Service), Gunicorn
+Backend → Python Flask
+Database → SQLite
+Frontend → HTML, CSS, Bootstrap, Jinja2
+Server Deployment → Render + Gunicorn
 
 📂 Project Structure
-HOTELMAANGEMT_SYSTEM/
+
+HOTEL_MANAGEMENT_SYSTEM/
 │── app.py
 │── requirements.txt
 │── templates/
-│   ├── index.html
-│   ├── dashboard.html
-│   ├── rooms.html
-│   ├── add_room.html
-│   ├── guests.html
-│   ├── add_guest.html
-│   ├── bookings.html
-│   ├── add_booking.html
-│   ├── checkout.html
-│   ├── staff.html
-│   ├── add_staff.html
-│   └── reports.html
+│ ├── login.html
+│ ├── dashboard.html
+│ ├── rooms.html
+│ ├── add_room.html
+│ ├── guests.html
+│ ├── add_guest.html
+│ ├── bookings.html
+│ ├── add_booking.html
+│ ├── checkout.html
+│ ├── staff.html
+│ ├── add_staff.html
+│ └── reports.html
 │── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
+│ ├── css
+│ ├── js
+│ └── images
 └── hotel_management.db
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/satsbee09/HOTELMAANGEMT_SYSTEM.git
-cd HOTELMAANGEMT_SYSTEM
+🔐 Login Details
 
-2️⃣ Install Requirements
+Username: admin
+Password: admin123
+
+⚙️ Installation & Setup
+
+1️⃣ Clone the repo:
+git clone https://github.com/satsbee09/HOTEL_MANAGEMENT_SYSTEM.git
+
+cd HOTEL_MANAGEMENT_SYSTEM
+
+2️⃣ Install dependencies:
 pip install -r requirements.txt
 
-3️⃣ Run the Project
+3️⃣ Start the server:
 python app.py
 
-4️⃣ Open in Browser
+4️⃣ Open:
 http://127.0.0.1:5000
 
-🚀 Deploy on Render
-Build Command
+🚀 Render Deployment
+
+Build Command:
 pip install -r requirements.txt
 
-Start Command
+Start Command:
 gunicorn app:app
 
-requirements.txt Must Include
+requirements.txt must include:
 flask
+werkzeug
 gunicorn
-python-dotenv
 
-🗄 Database
+🗄 Database Auto-Creation
+Tables included: Rooms, Guests, Bookings, Staff, Payments
 
-SQLite database (hotel_management.db) is auto-created with tables:
+📸 Screenshots
+(Add dashboard and forms screenshots here)
 
-rooms
-
-guests
-
-bookings
-
-staff
-
-payments
-
-🤝 Contributing
-
-Pull requests and feature improvements are welcome.
+🤝 Contribution
+Pull requests & improvements are welcome!
 
 📜 License
+This project is free & open-source for educational use.
 
-This project is open-source and free to use.
+⭐ If you find this useful — please Star the GitHub repo! 😊
