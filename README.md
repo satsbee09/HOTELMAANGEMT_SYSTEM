@@ -4,7 +4,7 @@ A complete Hotel Management System built using Flask, SQLite, HTML/CSS, and Boot
 This project allows hotel staff to manage rooms, guests, bookings, payments, staff, and reports.
 
 🚀 Live Demo
-https://hotelmanagement-system.onrender.com
+https://hotelmaangemt-system-1.onrender.com
 
 📌 Features
 
