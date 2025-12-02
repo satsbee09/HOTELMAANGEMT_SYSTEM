@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Booking - Hotel Management</title>
+    <title>Create Booking - Hotel Management</title>    
+    <!-- Dark Mode CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-mode.css') }}">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f6fa; }
@@ -77,5 +80,8 @@
             </form>
         </div>
     </div>
+
+    <!-- Dark Mode JavaScript -->
+    <script src="{{ url_for('static', filename='js/dark-mode.js') }}"></script>
 </body>
 </html>
