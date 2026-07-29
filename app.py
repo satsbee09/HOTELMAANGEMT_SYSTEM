@@ -8,9 +8,6 @@ app = Flask(__name__)
 # Secret Key for Sessions
 app.secret_key = "supersecretkey"  # change before deploying!
 
-# Initialize DB tables when the app starts (works for gunicorn/app:app deployment)
-init_db()
-
 # Database Connection
 def get_db_connection():
     db_path = os.getenv('DATABASE_PATH', 'hotel_management.db')
@@ -345,9 +342,11 @@ def reports():
                            occupancy_rate=rate)
 
 
+# Initialize DB tables when the app starts (works for gunicorn/app:app deployment)
+init_db()
+
 # --------------------- RUN APP ---------------------
 
 if __name__ == "__main__":
-    init_db()
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
