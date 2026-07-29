@@ -8,6 +8,9 @@ app = Flask(__name__)
 # Secret Key for Sessions
 app.secret_key = "supersecretkey"  # change before deploying!
 
+# Initialize DB tables when the app starts (works for gunicorn/app:app deployment)
+init_db()
+
 # Database Connection
 def get_db_connection():
     db_path = os.getenv('DATABASE_PATH', 'hotel_management.db')
